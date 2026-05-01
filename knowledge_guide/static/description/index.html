@@ -217,10 +217,10 @@
     </h2>
     <p style="font-size:15px; color:#cbd5e1; margin:0 0 16px 0">
       Ship documentation pages with your own module by depending on
-      <code style="background-color:#1a1a35; color:#f8f9fc; padding:2px 6px; border-radius:4px">knowledge_guide</code>
+      <strong style="color:#f0c4c3">knowledge_guide</strong>
       and adding an XML data file:
     </p>
-    <pre style="background-color:#1a1a35; color:#e2e5ec; padding:20px; border-radius:8px; font-size:13px; line-height:1.5; margin:0; overflow-x:auto"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+    <pre style="background-color:#ffffff; color:#0f0f1a; padding:20px; border-radius:8px; border:1px solid #e2e5ec; font-size:13px; line-height:1.5; margin:0; overflow-x:auto"><code style="color:#0f0f1a">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;odoo noupdate="1"&gt;
     &lt;record id="page_my_feature" model="knowledge.guide.page"&gt;
         &lt;field name="name"&gt;My Feature&lt;/field&gt;
@@ -236,9 +236,9 @@
 &lt;/odoo&gt;</code></pre>
     <p style="font-size:14px; color:#94a3b8; margin:16px 0 0 0">
       Then declare it in your manifest under
-      <code style="background-color:#1a1a35; color:#f8f9fc; padding:2px 6px; border-radius:4px">'depends': ['knowledge_guide']</code>
+      <strong style="color:#f0c4c3">'depends': ['knowledge_guide']</strong>
       and the corresponding entry in
-      <code style="background-color:#1a1a35; color:#f8f9fc; padding:2px 6px; border-radius:4px">'data'</code>.
+      <strong style="color:#f0c4c3">'data'</strong>.
       Pages and categories from all installed modules are merged into the same sidebar
       automatically.
     </p>
