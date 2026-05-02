@@ -1,0 +1,78 @@
+/* ===== Bottom mode: chatter below the form, full width ===== */
+.o_form_view:not(.o_xxl_form_view) {
+    flex-direction: column !important;
+}
+
+.o_form_view:not(.o_xxl_form_view) > .o_form_sheet_bg {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+}
+
+.o_form_view:not(.o_xxl_form_view) > .o-mail-Form-chatter {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* ===== Side mode: form takes the full sheet width ===== */
+body.chatter-side .o_form_sheet_bg .o_form_sheet {
+    max-width: 100% !important;
+}
+
+body.chatter-side .o_form_sheet_bg {
+    max-width: none !important;
+}
+
+/* Force horizontal layout regardless of viewport width (overrides Odoo's
+   native flex-column class added below the xxl breakpoint). */
+body.chatter-side .o_form_renderer,
+body.chatter-side .o_form_renderer.flex-column {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Cancel the responsive top-margin native Odoo applies on the chatter
+   when stacked (mt-4 mt-md-0). Useless in horizontal mode. */
+body.chatter-side .o-mail-Form-chatter {
+    margin-top: 0 !important;
+}
+
+/* When the chatter is narrow (sided + small viewport, or user dragged the
+   splitter left), let the topbar wrap onto multiple rows instead of
+   hiding buttons behind a horizontal scrollbar. The Send/Log/Activities
+   primary buttons stay together on row 1, the secondary group (icons +
+   followers) wraps to row 2. */
+.o-mail-Chatter-topbar {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    row-gap: 0.25rem;
+}
+
+/* Send Message and Log Note must NEVER wrap and must NEVER shrink — they
+   define the minimum useful width of the chatter. */
+.o-mail-Chatter-topbar > .o-mail-Chatter-sendMessage,
+.o-mail-Chatter-topbar > .o-mail-Chatter-logNote {
+    flex-shrink: 0 !important;
+}
+
+.o-mail-Chatter-topbar > .flex-grow-1.d-flex {
+    flex-wrap: wrap !important;
+    row-gap: 0.25rem;
+}
+
+/* Hard floor on chatter width when sided so Send + Log always fit on
+   row 1. The splitter (JS) enforces the same floor so dragging stops
+   here. */
+body.chatter-side .o-mail-Form-chatter {
+    min-width: 240px !important;
+}
+
+/* Smooth transitions on toggle and on splitter double-click reset. The
+   class is set briefly by JS so the user-driven splitter drag stays
+   instant (no laggy frame-by-frame animation). */
+body.chatter-toggling .o_form_renderer,
+body.chatter-toggling .o_form_sheet_bg,
+body.chatter-toggling .o-mail-Form-chatter,
+body.chatter-toggling .o-chatter-splitter {
+    transition: width 180ms ease, max-width 180ms ease, flex-basis 180ms ease;
+}

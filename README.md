@@ -9,6 +9,7 @@ non-profits.
 | Module             | Description                                                     | Series |
 |--------------------|-----------------------------------------------------------------|--------|
 | `knowledge_guide`  | Build navigable user guides and publish them on the web with secure tokenized links. | 18.0   |
+| `chatter_position` | Toggle the chatter between side and bottom, with a draggable splitter. | 18.0   |
 
 ## Branches
 
