@@ -19,7 +19,7 @@
     </p>
 
     <div class="d-inline-block" style="padding:10px 22px; background-color:#9B1916; color:#ffffff; font-weight:600; border-radius:8px; font-size:14px">
-      Free &nbsp;·&nbsp; LGPL-3 &nbsp;·&nbsp; Compatible Odoo 18 Community &amp; Enterprise
+      Free &nbsp;&middot;&nbsp; LGPL-3 &nbsp;&middot;&nbsp; Compatible Odoo 18 Community &amp; Enterprise
     </div>
 
   </div>
@@ -176,20 +176,22 @@
 
     <ol style="font-size:16px; color:#4a5068; padding-left:24px; margin:0">
       <li style="margin-bottom:14px">
-        <strong style="color:#9B1916">Side chatter on small laptops.</strong>
-        Native Odoo collapses the chatter to the bottom below the XXL breakpoint, even when
-        a 13&quot; or 14&quot; laptop has plenty of horizontal room. This module lets users
-        keep the side layout regardless of screen size.
+        <strong style="color:#9B1916">Reclaim your form width on big screens.</strong>
+        On wide monitors Odoo forces side chatter &mdash; and on forms with one2many lines
+        (sales orders, invoices, delivery slips, with 6 to 8 columns each) the chatter
+        eats the columns or pushes you into horizontal scrolling. One click and the
+        chatter goes to the bottom: your lines breathe again.
       </li>
       <li style="margin-bottom:14px">
-        <strong style="color:#9B1916">Bottom chatter on ultra-wide monitors.</strong>
-        On 27&quot;+ screens the side chatter eats real estate that the form could use.
-        Power users who prefer a wide form sheet flip the chatter to the bottom permanently.
+        <strong style="color:#9B1916">Keep side chatter on a 13&quot; or 14&quot; laptop.</strong>
+        Below Odoo&rsquo;s XXL breakpoint, native Odoo forces the chatter to the bottom
+        even when a 13&quot; or 14&quot; laptop has plenty of horizontal room. This module
+        overrides that decision so you can keep the side layout at any viewport size.
       </li>
       <li>
-        <strong style="color:#9B1916">Per-user layout preferences.</strong>
-        Two colleagues sharing the same database get to keep their own preferred layout
-        without arguing about CSS overrides — each browser stores its own setting.
+        <strong style="color:#9B1916">Per-user layout preferences in shared databases.</strong>
+        Two colleagues sharing the same database keep their own preferred layout without
+        fighting over CSS overrides &mdash; each browser stores its own setting.
       </li>
     </ol>
   </div>
@@ -202,8 +204,8 @@
       How to use it
     </h2>
     <ol style="font-size:16px; color:#4a5068; padding-left:24px; margin:0">
-      <li style="margin-bottom:10px">Install the module — no setup or configuration screen.</li>
-      <li style="margin-bottom:10px">Open any record with a chatter (a contact, an order, an invoice…).</li>
+      <li style="margin-bottom:10px">Install the module &mdash; no setup or configuration screen.</li>
+      <li style="margin-bottom:10px">Open any record with a chatter (a contact, an order, an invoice&hellip;).</li>
       <li style="margin-bottom:10px">Look at the chatter topbar: a new toggle icon appears next to the search button.</li>
       <li style="margin-bottom:10px">Click it once to flip the chatter to the <strong>bottom</strong>. Click it again to flip back to the <strong>side</strong>.</li>
       <li style="margin-bottom:10px">In side mode, drag the vertical splitter to resize the form and chatter panes.</li>
@@ -248,7 +250,7 @@ class MyComponent extends Component {
       <strong style="color:#f0c4c3">FormController</strong>
       and
       <strong style="color:#f0c4c3">FormRenderer</strong>
-      to override Odoo's native layout choice. No models, no controllers, no migrations —
+      to override Odoo's native layout choice. No models, no controllers, no migrations &mdash;
       everything lives in
       <strong style="color:#f0c4c3">static/src/js/chatter_position.js</strong>
       and
@@ -279,7 +281,7 @@ class MyComponent extends Component {
         </tr>
         <tr style="border-bottom:1px solid #e2e5ec">
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">Database footprint</td>
-          <td style="padding:12px 0; color:#4a5068">None — no model, no controller, no XML view, no menu, no migration</td>
+          <td style="padding:12px 0; color:#4a5068">None &mdash; no model, no controller, no XML view, no menu, no migration</td>
         </tr>
         <tr style="border-bottom:1px solid #e2e5ec">
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">Persistence</td>
@@ -309,29 +311,26 @@ class MyComponent extends Component {
     </h2>
     <p style="font-size:15px; color:#4a5068; margin:0 0 16px 0">
       Chatter Position is built and maintained by
-      <a href="https://kameos.be" target="_blank" style="color:#9B1916; font-weight:700; text-decoration:none">Kameos</a>,
+      <strong style="color:#9B1916">Kameos</strong>,
       an Odoo integrator based in Belgium. We work with SMEs and non-profits on Odoo
       Enterprise integrations, custom module development, and Flutter mobile apps connected
       to Odoo.
     </p>
 
-    <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px">
-      <a href="mailto:info@kameos.be"
-         style="display:inline-block; padding:10px 18px; background-color:#9B1916; color:#ffffff; font-weight:600; border-radius:8px; font-size:14px; text-decoration:none">
-        Email&nbsp;&nbsp;info@kameos.be
-      </a>
-      <a href="https://kameos.be" target="_blank"
-         style="display:inline-block; padding:10px 18px; background-color:#ffffff; color:#9B1916; font-weight:600; border-radius:8px; font-size:14px; text-decoration:none; border:1px solid #9B1916">
-        Visit&nbsp;&nbsp;kameos.be
-      </a>
-      <a href="https://kameos.be/contactus" target="_blank"
-         style="display:inline-block; padding:10px 18px; background-color:#ffffff; color:#9B1916; font-weight:600; border-radius:8px; font-size:14px; text-decoration:none; border:1px solid #9B1916">
-        Contact&nbsp;form
-      </a>
-    </div>
+    <a href="mailto:info@kameos.be"
+       style="display:inline-block; padding:10px 18px; background-color:#9B1916; color:#ffffff; font-weight:600; border-radius:8px; font-size:14px; text-decoration:none; margin-bottom:16px">
+      Email&nbsp;&nbsp;info@kameos.be
+    </a>
 
-    <p style="font-size:13px; color:#636980; margin:16px 0 0 0">
-      Found a bug or missing a feature? Send us a message — we usually reply within one business day.
+    <p style="font-size:14px; color:#4a5068; margin:0">
+      Visit
+      <strong style="color:#9B1916">kameos.be</strong>
+      or use the contact form at
+      <strong style="color:#9B1916">kameos.be/contactus</strong>.
+    </p>
+
+    <p style="font-size:13px; color:#636980; margin:12px 0 0 0">
+      Found a bug or missing a feature? Send us a message &mdash; we usually reply within one business day.
     </p>
   </div>
 
