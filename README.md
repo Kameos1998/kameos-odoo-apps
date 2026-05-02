@@ -33,7 +33,7 @@ are released under LGPL-3.
 
 ## Contact
 
-[https://kameos.be](https://kameos.be) - hello [at] kameos.be
+[https://kameos.be](https://kameos.be) - info@kameos.be
 
 Found a bug or missing feature? Open an issue on GitHub or contact us via
 [kameos.be/contactus](https://kameos.be/contactus).
