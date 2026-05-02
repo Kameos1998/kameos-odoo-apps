@@ -5,3 +5,4 @@ access_knowledge_guide_book_user,knowledge.guide.book user,model_knowledge_guide
 access_knowledge_guide_book_admin,knowledge.guide.book admin,model_knowledge_guide_book,base.group_system,1,1,1,1
 access_knowledge_guide_send_wizard_user,knowledge.guide.send.wizard user,model_knowledge_guide_send_wizard,base.group_user,1,1,1,0
 access_knowledge_guide_view_source_wizard_admin,knowledge.guide.view.source.wizard admin,model_knowledge_guide_view_source_wizard,base.group_system,1,1,1,0
+access_knowledge_guide_book_create_wizard_admin,knowledge.guide.book.create.wizard admin,model_knowledge_guide_book_create_wizard,base.group_system,1,1,1,1

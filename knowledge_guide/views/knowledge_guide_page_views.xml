@@ -6,6 +6,14 @@
         <field name="model">knowledge.guide.page</field>
         <field name="arch" type="xml">
             <list string="Guide Pages">
+                <header>
+                    <button name="%(knowledge_guide.knowledge_guide_book_create_wizard_action)d"
+                            type="action"
+                            string="Create book from selection"
+                            display="always"
+                            class="btn-primary"
+                            icon="fa-book"/>
+                </header>
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="category"/>

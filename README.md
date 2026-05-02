@@ -15,6 +15,8 @@ non-profits.
 This repository follows the Odoo Apps Store convention: one branch per Odoo
 series. The branch name matches the Odoo version exactly:
 
+- `17.0` - modules for Odoo 17.0
+- `18.0` - modules for Odoo 18.0
 - `19.0` - modules for Odoo 19.0
 
 ## Installation

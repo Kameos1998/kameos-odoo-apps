@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Knowledge Guide',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'category': 'Productivity',
     'summary': 'Build navigable user guides and publish them on the web with secure tokenized links.',
     'description': """
@@ -72,6 +72,7 @@ original by filling the dedicated "Custom content" field on the page form.
     ],
     'data': [
         'security/ir.model.access.csv',
+        'wizard/knowledge_guide_book_create_wizard_views.xml',
         'views/knowledge_guide_book_views.xml',
         'views/knowledge_guide_page_views.xml',
         'views/knowledge_guide_menu.xml',
