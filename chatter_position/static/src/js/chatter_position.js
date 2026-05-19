@@ -284,10 +284,10 @@ function updateAllToggleButtons() {
 function injectToggleButton(topbar) {
     if (topbar.querySelector('.o-chatter-position-toggle')) return;
 
-    // Insert just before the search button (look for any localized
-    // aria-label that contains the "search" stem).
-    const searchBtn = topbar.querySelector(
-        'button[aria-label*="earch"], button[aria-label*="echerch"]'
+    // Locate the search button by its icon class (oi-search) rather
+    // than its aria-label, so the selector works in every language.
+    const searchBtn = Array.from(topbar.querySelectorAll('button')).find(
+        btn => btn.querySelector('i.oi-search')
     );
     if (!searchBtn) return;
 
