@@ -1,6 +1,6 @@
 {
     'name': 'Chatter Position',
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.2',
     'category': 'Productivity',
     'summary': 'Toggle the chatter between side and bottom, with a draggable splitter.',
     'description': """
