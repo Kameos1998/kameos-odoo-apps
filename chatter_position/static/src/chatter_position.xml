@@ -10,7 +10,7 @@
                 t-att-title="this.chatterPositionToggle.title"
                 t-att-aria-label="this.chatterPositionToggle.title"
                 t-on-click="this.toggleChatterPosition">
-            <i class="oi oi-fw" role="img" t-att-data-icon="this.chatterPositionToggle.icon"/>
+            <i class="oi oi-fw" role="img" data-icon="toolbar" t-att-class="this.chatterPositionToggle.dock"/>
         </button>
     </xpath>
     <xpath expr="//div[hasclass('o-mail-Chatter')]" position="inside">

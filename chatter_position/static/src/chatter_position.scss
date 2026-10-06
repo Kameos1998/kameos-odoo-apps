@@ -32,6 +32,15 @@
         }
     }
 
+    // `toolbar` is a panel docked at the top: flipped = bottom, turned = side
+    // (rtlcss mirrors the rotation in right-to-left languages).
+    .o-ChatterPosition-toBottom {
+        transform: scaleY(-1);
+    }
+    .o-ChatterPosition-toSide {
+        transform: rotate(90deg);
+    }
+
     // Absolute in the chatter container, outside the scrolling `.o-mail-Chatter`:
     // it does not scroll with the messages.
     .o-ChatterPosition-splitter {

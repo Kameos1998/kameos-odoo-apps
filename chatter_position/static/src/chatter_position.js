@@ -81,9 +81,10 @@ patch(FormController.prototype, {
 
 patch(Chatter.prototype, {
     get chatterPositionToggle() {
+        // One glyph (a panel docked to an edge), turned towards the target position.
         return position() === "bottom"
-            ? { icon: "view_column", title: _t("Move chatter to the side") }
-            : { icon: "vertical_align_bottom", title: _t("Move chatter to the bottom") };
+            ? { dock: "o-ChatterPosition-toSide", title: _t("Move chatter to the side") }
+            : { dock: "o-ChatterPosition-toBottom", title: _t("Move chatter to the bottom") };
     },
     toggleChatterPosition() {
         togglePosition();
