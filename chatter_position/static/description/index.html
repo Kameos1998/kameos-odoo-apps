@@ -6,7 +6,7 @@
   <div class="text-center" style="background-color:#0f0f1a; color:#ffffff; padding:50px 30px; border-radius:14px; margin-bottom:40px">
 
     <div style="font-size:13px; font-weight:700; letter-spacing:3px; color:#9B1916; margin-bottom:20px; text-transform:uppercase">
-      Odoo 19 module by Kameos
+      Odoo 20 module by Kameos
     </div>
 
     <h1 style="font-size:48px; font-weight:800; margin:0 0 16px 0; letter-spacing:-1px; color:#ffffff">
@@ -19,7 +19,7 @@
     </p>
 
     <div class="d-inline-block" style="padding:10px 22px; background-color:#9B1916; color:#ffffff; font-weight:600; border-radius:8px; font-size:14px">
-      Free &nbsp;&middot;&nbsp; LGPL-3 &nbsp;&middot;&nbsp; Compatible Odoo 19 Community &amp; Enterprise
+      Free &nbsp;&middot;&nbsp; LGPL-3 &nbsp;&middot;&nbsp; Compatible Odoo 20 Community &amp; Enterprise
     </div>
 
   </div>
@@ -95,7 +95,7 @@
           </h3>
           <p style="font-size:14px; color:#4a5068; margin:0">
             Messed up the layout while dragging? Double-click the splitter to snap back
-            to a clean <code>60/40</code> ratio with a smooth 180&nbsp;ms transition.
+            to the default width (40&nbsp;% for the chatter).
           </p>
         </div>
       </div>
@@ -106,9 +106,9 @@
             Always usable when narrow
           </h3>
           <p style="font-size:14px; color:#4a5068; margin:0">
-            A hard minimum width on the chatter (240&nbsp;px) keeps <strong>Send Message</strong>
-            and <strong>Log Note</strong> on the same row. Secondary buttons wrap to a second
-            row instead of getting hidden behind a horizontal scrollbar.
+            Minimum widths (320&nbsp;px each) keep both the form and the chatter usable:
+            <strong>Send Message</strong> and <strong>Log Note</strong> stay on the same row,
+            secondary buttons wrap to a second row.
           </p>
         </div>
       </div>
@@ -116,11 +116,11 @@
       <div class="col-md-6 mb-3">
         <div style="background-color:#f8f9fc; border:1px solid #e2e5ec; padding:20px 24px; border-radius:8px; height:100%">
           <h3 style="font-size:17px; font-weight:700; color:#9B1916; margin:0 0 8px 0">
-            Smooth transitions
+            Every language, every theme
           </h3>
           <p style="font-size:14px; color:#4a5068; margin:0">
-            180&nbsp;ms transition on toggle and on splitter reset. The drag itself stays
-            instant, frame by frame, for a snappy native feel.
+            Translated in English, French, Dutch, German and Spanish. Right-to-left languages
+            mirror the layout and the splitter. Colors follow your theme, dark mode included.
           </p>
         </div>
       </div>
@@ -132,7 +132,7 @@
           </h3>
           <p style="font-size:14px; color:#4a5068; margin:0">
             No model, no controller, no XML view, no menu, no migration. Layout choice and
-            split ratio live in the browser <code>localStorage</code> only. Nothing is sent
+            chatter width live in the browser <code>localStorage</code> only. Nothing is sent
             to the server.
           </p>
         </div>
@@ -141,11 +141,11 @@
       <div class="col-md-6 mb-3">
         <div style="background-color:#f8f9fc; border:1px solid #e2e5ec; padding:20px 24px; border-radius:8px; height:100%">
           <h3 style="font-size:17px; font-weight:700; color:#9B1916; margin:0 0 8px 0">
-            Works at any viewport
+            Works at any desktop width
           </h3>
           <p style="font-size:14px; color:#4a5068; margin:0">
-            The module overrides Odoo's <code>o_xxl_form_view</code> breakpoint logic so the
-            user's choice wins on small laptops, ultra-wide monitors, and everything between.
+            The user's choice wins on small laptops, ultra-wide monitors, and everything between.
+            On phones, in dialogs and next to attachment previews, Odoo keeps its own layout.
           </p>
         </div>
       </div>
@@ -209,12 +209,12 @@
       <li style="margin-bottom:10px">Look at the chatter topbar: a new toggle icon appears next to the search button.</li>
       <li style="margin-bottom:10px">Click it once to flip the chatter to the <strong>bottom</strong>. Click it again to flip back to the <strong>side</strong>.</li>
       <li style="margin-bottom:10px">In side mode, drag the vertical splitter to resize the form and chatter panes.</li>
-      <li>Double-click the splitter to reset to <code>60/40</code>.</li>
+      <li>Double-click the splitter to reset the width.</li>
     </ol>
     <p style="font-size:14px; color:#636980; margin:16px 0 0 0; font-style:italic">
-      The choice and the ratio are stored in <code>localStorage</code> under the keys
-      <code>chatter_position</code> and <code>chatter_split_ratio</code>. Clearing site data
-      resets the preferences to default (side, 60/40).
+      The choice and the width are stored in <code>localStorage</code> under the keys
+      <code>chatter_position</code> and <code>chatter_position_width</code>. Clearing site data
+      resets the preferences to default (side, 40&nbsp;% chatter).
     </p>
   </div>
 
@@ -230,8 +230,7 @@
       <strong style="color:#f0c4c3">chatterPosition</strong>.
       Any OWL component can read the current layout or toggle it programmatically:
     </p>
-    <pre style="background-color:#ffffff; color:#0f0f1a; padding:20px; border-radius:8px; border:1px solid #e2e5ec; font-size:13px; line-height:1.5; margin:0; overflow-x:auto"><code style="color:#0f0f1a">/** @odoo-module **/
-import { Component } from "@odoo/owl";
+    <pre style="background-color:#ffffff; color:#0f0f1a; padding:20px; border-radius:8px; border:1px solid #e2e5ec; font-size:13px; line-height:1.5; margin:0; overflow-x:auto"><code style="color:#0f0f1a">import { Component } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 
 class MyComponent extends Component {
@@ -252,9 +251,8 @@ class MyComponent extends Component {
       <strong style="color:#f0c4c3">FormRenderer</strong>
       to override Odoo's native layout choice. No models, no controllers, no migrations &mdash;
       everything lives in
-      <strong style="color:#f0c4c3">static/src/js/chatter_position.js</strong>
-      and
-      <strong style="color:#f0c4c3">static/src/css/chatter_position.css</strong>.
+      <strong style="color:#f0c4c3">static/src/</strong>
+      (one JS, one XML template extension, one SCSS file).
     </p>
   </div>
 
@@ -269,11 +267,11 @@ class MyComponent extends Component {
       <tbody>
         <tr style="border-bottom:1px solid #e2e5ec">
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a; width:30%">Compatibility</td>
-          <td style="padding:12px 0; color:#4a5068">Odoo 19 Community and Enterprise</td>
+          <td style="padding:12px 0; color:#4a5068">Odoo 20 Community and Enterprise</td>
         </tr>
         <tr style="border-bottom:1px solid #e2e5ec">
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">Dependencies</td>
-          <td style="padding:12px 0; color:#4a5068"><code>mail</code>, <code>web</code></td>
+          <td style="padding:12px 0; color:#4a5068"><code>mail</code></td>
         </tr>
         <tr style="border-bottom:1px solid #e2e5ec">
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">License</td>
@@ -287,7 +285,7 @@ class MyComponent extends Component {
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">Persistence</td>
           <td style="padding:12px 0; color:#4a5068">
             Browser <code>localStorage</code> keys
-            <code>chatter_position</code> and <code>chatter_split_ratio</code>
+            <code>chatter_position</code> and <code>chatter_position_width</code>
           </td>
         </tr>
         <tr style="border-bottom:1px solid #e2e5ec">
@@ -296,7 +294,7 @@ class MyComponent extends Component {
         </tr>
         <tr>
           <td style="padding:12px 0; font-weight:600; color:#0f0f1a">Frontend</td>
-          <td style="padding:12px 0; color:#4a5068">Patches on <code>FormController</code> and <code>FormRenderer</code>, plain CSS, OWL service registration</td>
+          <td style="padding:12px 0; color:#4a5068">Patches on <code>FormController</code>, <code>FormRenderer</code> and <code>Chatter</code>, SCSS, OWL service registration</td>
         </tr>
       </tbody>
     </table>

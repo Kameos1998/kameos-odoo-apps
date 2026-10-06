@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-inherit="mail.Chatter" t-inherit-mode="extension">
+    <!-- Hidden where the webclient keeps its own layout: small screens,
+         dialogs, attachment preview (same condition as the pop-out button). -->
+    <xpath expr="//button[@t-on-click='this.onClickSearch']" position="before">
+        <button t-if="!this.env.inDialog and !(this.webChatterProps.hasAttachmentPreview and this.state.thread.attachmentsInWebClientView.length)"
+                class="o-ChatterPosition-toggle btn btn-link text-muted px-1 d-none d-md-inline-block"
+                t-att-title="this.chatterPositionToggle.title"
+                t-att-aria-label="this.chatterPositionToggle.title"
+                t-on-click="this.toggleChatterPosition">
+            <i class="oi oi-fw" role="img" t-att-data-icon="this.chatterPositionToggle.icon"/>
+        </button>
+    </xpath>
+    <xpath expr="//div[hasclass('o-mail-Chatter')]" position="inside">
+        <div t-if="this.webChatterProps.isChatterAside"
+             class="o-ChatterPosition-splitter d-none d-md-block"
+             title="Drag to resize — double-click to reset"
+             t-on-pointerdown="this.onChatterSplitterPointerDown"
+             t-on-dblclick="this.onChatterSplitterDblClick"/>
+    </xpath>
+</t>
+
+</templates>

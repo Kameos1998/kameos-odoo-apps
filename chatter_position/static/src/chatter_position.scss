@@ -1,0 +1,51 @@
+// Desktop only: below md (768px, the webclient's isSmall()) core stacks the
+// chatter itself and the JS hands the layout back. Core marks a side chatter
+// with `.o-aside`; the rules key on that marker, not on the viewport width.
+@include media-breakpoint-up(md) {
+    // Side layout below XXL: core stacks the form with `.flex-column`.
+    .o_form_renderer:has(> .o-mail-Form-chatter.o-aside) {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+
+    // Bottom layout at XXL: core lays the form out in a row.
+    .o_form_renderer:has(> .o-mail-Form-chatter:not(.o-aside)) {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    // The form fills the room the chatter leaves (core caps it at 1400px).
+    .o_form_renderer:has(> .o-mail-Form-chatter) > .o_form_sheet_bg {
+        max-width: none;
+    }
+
+    .o-mail-Form-chatter.o-aside {
+        position: relative; // containing block of the splitter
+        flex: 0 0 var(--ChatterPosition-width, 40%);
+        width: auto;
+        min-width: 320px; // Send message + Log note
+        max-width: calc(100% - 320px); // keeps the form usable
+
+        .o-mail-Chatter-topbar {
+            flex-wrap: wrap;
+            row-gap: map-get($spacers, 1);
+        }
+    }
+
+    // Absolute in the chatter container, outside the scrolling `.o-mail-Chatter`:
+    // it does not scroll with the messages.
+    .o-ChatterPosition-splitter {
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: 0;
+        z-index: 2;
+        width: 5px;
+        background-color: $border-color;
+        cursor: col-resize;
+        touch-action: none;
+
+        &:hover, &:active {
+            background-color: $o-action;
+        }
+    }
+}

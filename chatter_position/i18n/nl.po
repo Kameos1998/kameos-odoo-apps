@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* chatter_position
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 00:00+0000\n"
+"PO-Revision-Date: 2026-10-06 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: chatter_position
+#: model:ir.module.module,description:base.module_chatter_position
+msgid ""
+"\n"
+"Chatter Position\n"
+"================\n"
+"\n"
+"Adds a small button to every chatter topbar that toggles between two\n"
+"layouts:\n"
+"\n"
+"* **Side chatter** (default): the chatter sits next to the form, with a\n"
+"  draggable splitter to adjust its width. Double-click the splitter to\n"
+"  reset it.\n"
+"* **Bottom chatter**: the chatter spans the full form width below the\n"
+"  form sheet.\n"
+"\n"
+"Layout choice and chatter width are persisted per browser via\n"
+"``localStorage`` — no server-side preference, no database changes,\n"
+"no model created.\n"
+"\n"
+"Odoo keeps its own layout where it knows better: on small screens, in\n"
+"dialogs and next to attachment previews.\n"
+"\n"
+"A public service ``chatterPosition`` is exposed in the registry so other\n"
+"modules can read or toggle the position programmatically.\n"
+msgstr ""
+"\n"
+"Chatterpositie\n"
+"==============\n"
+"\n"
+"Voegt aan de chatterbalk een kleine knop toe die wisselt tussen twee\n"
+"indelingen:\n"
+"\n"
+"* **Chatter aan de zijkant** (standaard): de chatter staat naast het\n"
+"  formulier, met een versleepbare scheidingslijn om de breedte aan te\n"
+"  passen. Dubbelklik op de scheidingslijn om de standaardbreedte te\n"
+"  herstellen.\n"
+"* **Chatter onderaan**: de chatter beslaat de volledige breedte onder het\n"
+"  formulier.\n"
+"\n"
+"Indeling en breedte worden per browser bewaard (``localStorage``) — geen\n"
+"voorkeur op de server, geen wijziging aan de database, geen model\n"
+"aangemaakt.\n"
+"\n"
+"Odoo behoudt zijn eigen indeling waar dat nodig is: op kleine schermen, in\n"
+"dialoogvensters en naast voorbeelden van bijlagen.\n"
+"\n"
+"Een publieke service ``chatterPosition`` staat in het register zodat\n"
+"andere modules de positie kunnen lezen of wisselen.\n"
+
+#. module: chatter_position
+#: model:ir.module.module,shortdesc:base.module_chatter_position
+msgid "Chatter Position"
+msgstr "Chatterpositie"
+
+#. module: chatter_position
+#. odoo-javascript
+#: code:addons/chatter_position/static/src/chatter_position.xml:0
+msgid "Drag to resize — double-click to reset"
+msgstr "Slepen om de grootte te wijzigen — dubbelklikken om te herstellen"
+
+#. module: chatter_position
+#. odoo-javascript
+#: code:addons/chatter_position/static/src/chatter_position.js:0
+msgid "Move chatter to the bottom"
+msgstr "Chatter naar onderen verplaatsen"
+
+#. module: chatter_position
+#. odoo-javascript
+#: code:addons/chatter_position/static/src/chatter_position.js:0
+msgid "Move chatter to the side"
+msgstr "Chatter naar de zijkant verplaatsen"
+
+#. module: chatter_position
+#: model:ir.module.module,summary:base.module_chatter_position
+msgid "Toggle the chatter between side and bottom, with a draggable splitter."
+msgstr "Wissel de chatter tussen zijkant en onderkant, met een versleepbare scheidingslijn."
