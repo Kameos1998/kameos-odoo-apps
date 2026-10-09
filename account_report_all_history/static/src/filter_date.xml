@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Range mode only: the `_range` divider does not exist in single-date mode.
+         Odoo 18's selectDateFilter() turns any period type into
+         previous_/this_/next_<type>: the option is set directly instead, like
+         the standard "Today" entry. -->
+    <t t-name="account_report_all_history.AccountReportFilterDate" t-inherit="account_reports.AccountReportFilterDate" t-inherit-mode="extension">
+        <xpath expr="//div[@id='filter_date_divider_range']" position="before">
+            <DropdownItem
+                class="{
+                    'd-flex justify-content-between date_filter o_all_history': true,
+                    'selected': controller.options.date.filter === 'all_history',
+                }"
+                onSelected="() => this.filterClicked({ optionKey: 'date.filter', optionValue: 'all_history', reload: true })"
+                closingMode="'none'"
+            >
+                <div class="filter_name pe-3">All history</div>
+            </DropdownItem>
+        </xpath>
+    </t>
+</templates>
