@@ -10,6 +10,8 @@ non-profits.
 |--------------------|-----------------------------------------------------------------|--------|
 | `knowledge_guide`  | Build navigable user guides and publish them on the web with secure tokenized links. | 19.0   |
 | `chatter_position` | Toggle the chatter between side and bottom, with a draggable splitter. | 19.0   |
+| `account_report_all_history` | Add "All history" to the date filter of the accounting reports (Enterprise). | 19.0   |
+| `social_video_multipost` | Upload a video once in Social Marketing (Enterprise) and publish it on YouTube Shorts, TikTok, Facebook and Instagram Reels, LinkedIn and Google Business Profile. | 19.0   |
 
 ## Branches
 
