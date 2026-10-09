@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- The entry comes from the server-side filter list; like "Today", it has
+         no period to browse: label only, no arrows. -->
+    <t t-name="account_report_all_history.AccountReportFilterDate" t-inherit="account_reports.AccountReportFilterDate" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if=&quot;dateFilter.key === 'today'&quot;]" position="attributes">
+            <attribute name="t-if">dateFilter.key === 'today' or dateFilter.key === 'all_history'</attribute>
+        </xpath>
+    </t>
+</templates>
